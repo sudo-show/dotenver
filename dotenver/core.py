@@ -1,5 +1,6 @@
 import os
 import json
+import datetime as dt
 from dotenv import load_dotenv
 
 _env_loaded = False
@@ -18,14 +19,18 @@ def _to_bool(raw):
     v = raw.strip().lower()
     if v in _TRUE:  return True
     if v in _FALSE: return False
-    raise ValueError(f"expected a boolean, got {raw!r}")
+    raise ValueError(f"Expected a boolean.")
+
 
 _CASTS = {
-    "str":   str,
-    "int":   int,
-    "float": float,
-    "bool":  _to_bool,
-    "json":  json.loads,
+    "str":      str,
+    "int":      int,
+    "float":    float,
+    "bool":     _to_bool,
+    "json":     json.loads,
+    "date":     dt.date.fromisoformat,
+    "time":     dt.time.fromisoformat,
+    "datetime": dt.datetime.fromisoformat,
 }
 
 def getenv(name: str, default=_MISSING, cast: str = "str"):
@@ -63,4 +68,4 @@ def getenv(name: str, default=_MISSING, cast: str = "str"):
     try:
         return _CASTS[cast](raw)
     except (ValueError, TypeError) as e:
-        raise ValueError(f"`{name}` is not a valid {cast}: {raw!r}") from e
+        raise ValueError(f"`{name}` is not a valid {cast}") from e
