@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dotenver"
+description = "Safely pull variables from .env"
+requires-python = ">=3.9"
+dynamic = ["version"]
+dependencies = [
+    "python-dotenv",
+]
+
+[tool.setuptools]
+packages = ["dotenver"]
+
+[tool.setuptools_scm]
