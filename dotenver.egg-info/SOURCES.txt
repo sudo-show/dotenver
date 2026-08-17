@@ -1,0 +1,11 @@
+.gitignore
+pyproject.toml
+dotenver/__init__.py
+dotenver/core.py
+dotenver.egg-info/PKG-INFO
+dotenver.egg-info/SOURCES.txt
+dotenver.egg-info/dependency_links.txt
+dotenver.egg-info/requires.txt
+dotenver.egg-info/scm_file_list.json
+dotenver.egg-info/scm_version.json
+dotenver.egg-info/top_level.txt

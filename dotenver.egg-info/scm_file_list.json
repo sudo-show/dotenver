@@ -1,0 +1,8 @@
+{
+  "files": [
+    ".gitignore",
+    "dotenver/__init__.py",
+    "dotenver/core.py",
+    "pyproject.toml"
+  ]
+}

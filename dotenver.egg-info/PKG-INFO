@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: dotenver
+Version: 0.1.dev3+g57c902f43.d20260817
+Summary: Safely pull variables from .env
+Requires-Python: >=3.9
+Requires-Dist: python-dotenv
